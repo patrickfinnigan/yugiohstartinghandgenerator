@@ -49,12 +49,14 @@ const cards = [
 ];
 
 let openingHand = []
+// let openingHandPost = openingHand.split("")
 
 for (let i = 0; i < 5; i++) {
   let draw = cards[Math.floor(Math.random() * cards.length)];
-  openingHand.push(" " + draw)
+//   cards.splice([i],1);
+openingHand.push(draw);
+cards.splice(cards.indexOf(draw), 1);
 }
 
 console.log(openingHand);
 $(".openingHand").text(openingHand)
-
